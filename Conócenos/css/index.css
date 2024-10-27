@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f5c7c8;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin-left: 10px;
+    font-size: 24px;
+    color: #000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.hero {
+    background-color: #f7bfc0;
+    padding: 50px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+.breadcrumb {
+    margin: 20px;
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+}
+
+.section-content img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.text-section {
+    padding: 0 20px;
+}
+
+.text-section h3 {
+    color: #a72626;
+    font-size: 24px;
+}
+
+.text-section p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.section-content.reverse {
+    flex-direction: row-reverse;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-content div {
+    flex: 1;
+    padding: 10px;
+}
+
+footer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+footer a img{
+    width: 24px;
+}

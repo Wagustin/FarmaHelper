@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f4d3d3;
+    padding: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+main {
+    padding: 20px;
+}
+
+.profile-header {
+    background-color: #f4d3d3;
+    text-align: center;
+    padding: 10px;
+}
+
+.profile-info, .subscription-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-data, .billing-info, .subscription {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    width: 48%;
+}
+
+.profile-data h2, .billing-info h2 {
+    margin-bottom: 10px;
+}
+
+.premium {
+    background-color: #000;
+    color: #fff;
+}
+
+.free-version {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+footer {
+    background-color: #f4d3d3;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer-content nav ul {
+    display: flex;
+    list-style: none;
+}
+
+footer .footer-content nav ul li {
+    margin-right: 20px;
+}
+
+footer .footer-content .social-links a {
+    margin-right: 10px;
+}
+
+footer .footer-content .social-links img {
+    width: 30px;
+    height: 30px;
+}

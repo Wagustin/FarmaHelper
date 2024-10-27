@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+main {
+    padding: 20px;
+}
+
+.appointments-header {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.appointments-header h1 {
+    font-size: 2em;
+}
+
+.appointments-header img {
+    width: 400px;
+    margin-top: 10px;
+}
+
+.review-appointment {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.review-appointment h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.step-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.step-progress span {
+    background-color: #ddd;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-size: 1.2em;
+}
+
+.step-progress .checked {
+    background-color: #a00;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    border: none;
+    color: #a00;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.appointment-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-details p {
+    font-size: 1.2em;
+}
+
+.doctor-image img {
+    width: 150px;
+    border-radius: 10px;
+}
+
+.schedule-btn {
+    display: block;
+    width: 100%;
+    background-color: #d33;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    font-size: 1.2em;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.schedule-btn:hover {
+    background-color: #b00;
+}
+
+footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .footer-content nav ul {
+    display: flex;
+    list-style: none;
+}
+
+footer .footer-content nav ul li {
+    margin-right: 20px;
+}
+
+footer .footer-content .social-links a {
+    margin-right: 10px;
+}
+
+footer .footer-content .social-links img {
+    width: 30px;
+    height: 30px;
+}
