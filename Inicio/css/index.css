@@ -1,105 +1,458 @@
-body {
-    font-family: Arial, sans-serif;
+/* Importar Montserrat de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Reset básico y estilos generales */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: #f4d4d4;
+}
+
+/* Header y navegación */
 header {
+    background-color: white;
+    padding: 10px 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f4a7a7;
-    padding: 15px;
 }
 
-.logo img {
-    width: 120px;
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.home-logo img {
+    width: 126px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.brand-name {
+    text-decoration: none;
+    color: #640505;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: flex;
+    gap: 50px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #640505;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+    color: #b21919;
+}
+
+/* Sección Hero */
 .hero {
-    background-color: #f4a7a7;
-    padding: 50px 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 40px;
+    background-color: #f4d4d4;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.logo-main {
+    width: 567px;
+    height: 215px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hero-image-container {
+    flex-shrink: 0;
+}
+
+.hero-image {
+    width: 567px;
+    height: 378px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .search-bar {
-    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
 }
 
 .search-bar h1 {
-    color: #fff;
+    color: #640505;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .search-bar input {
-    padding: 10px;
-    width: 300px;
-    margin-right: 10px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
 .search-bar button {
-    padding: 10px 20px;
-    background-color: #e23e3e;
-    border: none;
+    background-color: #ff0000;
     color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s;
 }
 
-.valores {
-    padding: 50px 20px;
+.search-bar button:hover {
+    background-color: #b21919;
+}
+
+/* Sección Valores Banner */
+/* Sección Valores Banner */
+.valores-banner {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Altura aumentada para mejor impacto visual */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+    margin: 0; /* Quitado el margen para que ocupe todo el ancho */
+}
+
+.valores-imagen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.valores-content {
+    position: relative;
+    z-index: 2;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
-.valores h2 {
-    margin-bottom: 30px;
+.valores-banner h2 {
+    color: #333;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.conocenos-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.conocenos-btn:hover {
+    background-color: #b21919;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .valores-banner {
+        height: 300px;
+    }
+
+    .valores-banner h2 {
+        font-size: 2.5rem;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .valores-banner {
+        height: 250px;
+    }
+
+    .valores-banner h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Sección Funcionalidades */
+.funcionalidades-section {
+    padding: 60px 50px;
+    text-align: center;
+    background-color: white;
+}
+
+.funcionalidades-section h2 {
+    color: #640505;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .funcionalidades {
     display: flex;
     justify-content: space-around;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .funcionalidad {
-    width: 30%;
+    flex: 1;
+    padding: 20px;
 }
 
+.funcionalidad h3 {
+    color: #b21919;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.funcionalidad p {
+    color: #640505;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Sección Testimonios */
 .testimonios {
-    background-color: #f9f9f9;
-    padding: 50px;
+    background-color: #d9d9d9;
+    padding: 60px 0;
     text-align: center;
 }
 
 .testimonios h2 {
-    margin-bottom: 30px;
+    color: #640505;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.contenedor-testimonios {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 0 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .testimonio {
-    margin-bottom: 20px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 1;
 }
 
+.stars {
+    color: #ff0000;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.testimonio p {
+    color: #640505;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.testimonio h4 {
+    color: #b21919;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Footer */
+/* Footer */
 footer {
     background-color: #333;
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 40px 50px;
 }
 
-footer .social img {
-    width: 30px;
-    margin: 0 10px;
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h3 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    color: #f4d4d4;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #f4d4d4;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.social {
+    display: flex;
+    gap: 15px;
+}
+
+.social img {
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.3s ease;
+}
+
+.social img:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .social {
+        justify-content: center;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-main, .hero-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .search-bar {
+        max-width: 100%;
+    }
+
+    .valores-banner {
+        height: auto;
+    }
+
+    .valores-imagen {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .header-left {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .valores-banner h2 {
+        font-size: 2rem;
+        padding: 0 20px;
+    }
+
+    .funcionalidades {
+        flex-direction: column;
+    }
+
+    .contenedor-testimonios {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
 }
