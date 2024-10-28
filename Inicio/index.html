@@ -4,76 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FarmaHelper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-
     <header>
-        <div class="logo">
-            <img src="Imágenes/FarmaHelper.jpeg" alt="FarmaHelper Logo">
+        <div class="header-left">
+            <a href="index.html" class="home-logo">
+                <img src="/Inicio/Imágenes/LogoCuadradoClaro.png" alt="FarmaHelper Logo">
+            </a>
+            <a href="index.html" class="brand-name">FarmaHelper</a>
         </div>
         <nav>
             <ul>
-                <li><a href="/Síntomas/index.html">Síntomas</a></li>
-                <li><a href="/Medicamentos/index.html">Medicamentos</a></li>
-                <li><a href="/Farmacias/index.html">Farmacias</a></li>
-                <li><a href="/Mi Perfil/index.html">Perfil</a></li>
+                <li><a href="#">Síntomas</a></li>
+                <li><a href="#">Medicamentos</a></li>
+                <li><a href="#">Farmacias</a></li>
+                <li><a href="#">Citas</a></li>
+                <li><a href="#">Perfil</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="search-bar">
-            <h1>Medícate de manera segura</h1>
-            <input type="text" placeholder="Busca por síntomas o nombre de medicamento">
-            <button>Buscar</button>
+        <div class="hero-content">
+            <img src="/Inicio/Imágenes/LogoHorizontal.png" alt="FarmaHelper Logo" class="logo-main">
+            <div class="search-bar">
+                <h1>Medícate de manera segura</h1>
+                <input type="text" placeholder="Busca por síntomas o nombre de medicamento">
+                <button>Buscar</button>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <img src="/Inicio/Imágenes/Imagen_ arriba_inicio.png" alt="Familia feliz" class="hero-image">
         </div>
     </section>
 
-    <section class="valores">
-        <h2>Nuestros valores y propuesta</h2>
-        <div class="funcionalidades">
-            <div class="funcionalidad">
-                <h3>Búsqueda de síntomas</h3>
-                <p>Encuentra medicamentos basados en tus síntomas.</p>
-            </div>
-            <div class="funcionalidad">
-                <h3>Localización de farmacias</h3>
-                <p>Encuentra farmacias cercanas con el medicamento que necesitas.</p>
-            </div>
-            <div class="funcionalidad">
-                <h3>Recomendaciones personalizadas</h3>
-                <p>Recibe sugerencias basadas en tu historial médico.</p>
-            </div>
+    <!-- Sección de Valores y Propuesta -->
+    <section class="valores-banner">
+        <img src="/Inicio/Imágenes/NuestraProp.png" alt="Nuestros valores y propuesta" class="valores-imagen">
+        <div class="valores-content">
+            <h2>Nuestros valores y propuesta</h2>
+            <button class="conocenos-btn">Conócenos</button>
         </div>
     </section>
+
+<!-- Sección de Funcionalidades (título actualizado) -->
+<section class="funcionalidades-section">
+    <h2>Nuestras funcionalidades</h2>
+    <div class="funcionalidades">
+        <div class="funcionalidad">
+            <h3>Búsqueda de síntomas</h3>
+            <p>Encuentra medicamentos basados en tus síntomas.</p>
+        </div>
+        <div class="funcionalidad">
+            <h3>Localización de farmacias</h3>
+            <p>Encuentra farmacias cercanas con el medicamento que necesitas.</p>
+        </div>
+        <div class="funcionalidad">
+            <h3>Recomendaciones personalizadas</h3>
+            <p>Recibe sugerencias basadas en tu historial médico.</p>
+        </div>
+    </div>
+</section>
 
     <section class="testimonios">
         <h2>Lo que dicen nuestros usuarios</h2>
-        <div class="testimonio">
-            <p>FarmaHelper me ha ayudado mucho a encontrar medicamentos rápidamente.</p>
-            <h4>Maria G.</h4>
-        </div>
-        <div class="testimonio">
-            <p>Muy útil para localizar farmacias cercanas.</p>
-            <h4>Juan P.</h4>
-        </div>
-        <div class="testimonio">
-            <p>Las recomendaciones son precisas. ¡Excelente aplicación!</p>
-            <h4>Ana L.</h4>
+        <div class="contenedor-testimonios">
+            <div class="testimonio">
+                <div class="stars">★★★★★</div>
+                <p>FarmaHelper me ha ayudado mucho a encontrar medicamentos rápidamente.</p>
+                <h4>Maria G.</h4>
+            </div>
+            <div class="testimonio">
+                <div class="stars">★★★★☆</div>
+                <p>Muy útil para localizar farmacias cercanas.</p>
+                <h4>Juan P.</h4>
+            </div>
+            <div class="testimonio">
+                <div class="stars">★★★★★</div>
+                <p>Las recomendaciones son precisas. ¡Excelente aplicación!</p>
+                <h4>Ana L.</h4>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 FarmaHelper - Todos los derechos reservados.</p>
-            <div class="social">
-                <a href="#"><img src="Imágenes/Instagram.png" alt="Facebook"></a>
-                <a href="#"><img src="Imágenes/Facebook.webp" alt="Instagram"></a>
-                <a href="#"><img src="Imágenes/X.webp" alt="Twitter"></a>
+            <div class="footer-section">
+                <h3>Acerca de FarmaHelper</h3>
+                <p>FarmaHelper es tu asistente confiable para encontrar medicamentos y farmacias cercanas.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#">Síntomas</a></li>
+                    <li><a href="#">Medicamentos</a></li>
+                    <li><a href="#">Farmacias</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contáctanos</h3>
+                <p>Email: info@farmahelper.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social">
+                    <a href="#"><img src="Imágenes/Instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="Imágenes/Facebook.webp" alt="Facebook"></a>
+                    <a href="#"><img src="Imágenes/X.webp" alt="Twitter"></a>
+                </div>
             </div>
         </div>
     </footer>
-
 </body>
 </html>
