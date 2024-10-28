@@ -22,6 +22,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    padding: 5px 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .header-left {
@@ -34,6 +43,12 @@ header {
     width: 126px;
     height: 112px;
     object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+header.scrolled .home-logo img {
+    width: 100px;
+    height: 90px;
 }
 
 .brand-name {
@@ -53,11 +68,29 @@ nav ul li a {
     text-decoration: none;
     color: #640505;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
     color: #b21919;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #b21919;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
 }
 
 /* Sección Hero */
@@ -90,13 +123,27 @@ nav ul li a:hover {
     height: 378px;
     object-fit: cover;
     border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
+.hero-image:hover {
+    transform: scale(1.02);
+}
+
+/* Barra de búsqueda y sus animaciones */
 .search-bar {
     background: rgba(255, 255, 255, 0.95);
     padding: 2rem;
     border-radius: 8px;
     max-width: 800px;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .search-bar h1 {
@@ -104,6 +151,12 @@ nav ul li a:hover {
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     font-weight: 700;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .search-container input {
@@ -114,7 +167,25 @@ nav ul li a:hover {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    min-width: 600px; /* Establece un ancho mínimo para el input */
+    min-width: 600px;
+    transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: #ff0000;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+}
+
+.search-container input.error {
+    border: 2px solid #ff0000;
+    animation: shake 0.5s linear;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
 }
 
 .search-btn {
@@ -127,26 +198,56 @@ nav ul li a:hover {
     font-size: 1rem;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
     text-decoration: none;
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
 }
 
 .search-btn:hover {
     background-color: #b21919;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(178, 25, 25, 0.3);
+}
+
+.search-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.search-btn:hover::after {
+    width: 300px;
+    height: 300px;
 }
 
 /* Sección Valores Banner */
 .valores-banner {
     position: relative;
     width: 100%;
-    height: 400px; /* Altura aumentada para mejor impacto visual */
+    height: 400px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
-    margin: 0; /* Quitado el margen para que ocupe todo el ancho */
+    margin: 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.valores-banner.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .valores-imagen {
@@ -155,6 +256,11 @@ nav ul li a:hover {
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    transition: transform 0.8s ease;
+}
+
+.valores-banner:hover .valores-imagen {
+    transform: scale(1.05);
 }
 
 .valores-content {
@@ -188,32 +294,33 @@ nav ul li a:hover {
     font-family: 'Montserrat', sans-serif;
     transition: all 0.3s ease;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
 }
 
 .conocenos-btn:hover {
     background-color: #b21919;
-    transform: scale(1.05);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(178, 25, 25, 0.3);
 }
 
-@media (max-width: 768px) {
-    .valores-banner {
-        height: 300px;
-    }
-
-    .valores-banner h2 {
-        font-size: 2.5rem;
-        padding: 0 20px;
-    }
+.conocenos-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
 }
 
-@media (max-width: 480px) {
-    .valores-banner {
-        height: 250px;
-    }
-
-    .valores-banner h2 {
-        font-size: 2rem;
-    }
+.conocenos-btn:hover::after {
+    width: 300px;
+    height: 300px;
 }
 
 /* Sección Funcionalidades */
@@ -221,6 +328,14 @@ nav ul li a:hover {
     padding: 60px 50px;
     text-align: center;
     background-color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.funcionalidades-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .funcionalidades-section h2 {
@@ -240,7 +355,18 @@ nav ul li a:hover {
 
 .funcionalidad {
     flex: 1;
-    padding: 20px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.funcionalidad:hover,
+.funcionalidad.hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
 .funcionalidad h3 {
@@ -254,6 +380,7 @@ nav ul li a:hover {
     color: #640505;
     font-size: 1rem;
     font-weight: 400;
+    line-height: 1.6;
 }
 
 /* Sección Testimonios */
@@ -261,6 +388,14 @@ nav ul li a:hover {
     background-color: #d9d9d9;
     padding: 60px 0;
     text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.testimonios.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .testimonios h2 {
@@ -271,12 +406,11 @@ nav ul li a:hover {
 }
 
 .contenedor-testimonios {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    padding: 0 50px;
+    position: relative;
+    height: 200px;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 50px;
 }
 
 .testimonio {
@@ -284,7 +418,18 @@ nav ul li a:hover {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    flex: 1;
+    position: absolute;
+    width: calc(100% - 100px);
+    left: 50px;
+    top: 0;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s ease;
+}
+
+.testimonio.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .stars {
@@ -298,6 +443,7 @@ nav ul li a:hover {
     margin-bottom: 15px;
     font-size: 1rem;
     font-weight: 400;
+    line-height: 1.6;
 }
 
 .testimonio h4 {
@@ -307,11 +453,11 @@ nav ul li a:hover {
 }
 
 /* Footer */
-/* Footer */
 footer {
     background-color: #333;
     color: white;
     padding: 40px 50px;
+    margin-top: auto;
 }
 
 .footer-content {
@@ -368,29 +514,40 @@ footer {
 .social img {
     width: 32px;
     height: 32px;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .social img:hover {
     opacity: 0.8;
+    transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer-section {
-        text-align: center;
-    }
-
-    .social {
-        justify-content: center;
-    }
+/* Estilos para carga y errores */
+.loading, .error {
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
 }
 
-/* Responsive */
+.loading {
+    color: #640505;
+}
+
+.error {
+    color: #ff0000;
+    background: rgba(255, 0, 0, 0.1);
+}
+
+/* Transiciones de página */
+.page-transition {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+/* Media Queries */
 @media (max-width: 1200px) {
     .hero {
         flex-direction: column;
@@ -406,21 +563,28 @@ footer {
         max-width: 100%;
     }
 
-    .valores-banner {
-        height: auto;
+    .search-container input {
+        min-width: auto;
     }
 
-    .valores-imagen {
-        width: 100%;
+    .valores-banner {
         height: auto;
+        min-height: 300px;
+    }
+
+    .valores-banner h2 {
+        font-size: 2.5rem;
+    }
+
+    .funcionalidades {
+        flex-direction: column;
+        max-width: 600px;
     }
 }
 
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        padding: 15px;
-        gap: 15px;
+        padding: 10px 20px;
     }
 
     .header-left {
@@ -443,18 +607,74 @@ footer {
         padding: 0 20px;
     }
 
-    .funcionalidades {
-        flex-direction: column;
+    .contenedor-testimonios {
+        padding: 0 20px;
     }
 
-    .contenedor-testimonios {
-        flex-direction: column;
-        padding: 20px;
+    .testimonio {
+        width: calc(100% - 40px);
+        left: 20px;
     }
 
     .footer-content {
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
+    }
+
+    .footer-section {
         text-align: center;
+    }
+
+    .social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-logo img {
+        width: 100px;
+        height: 90px;
+    }
+
+    .brand-name {
+        font-size: 1.2rem;
+    }
+
+    .valores-banner h2 {
+        font-size: 1.5rem;
+    }
+
+    .search-bar h1 {
+        font-size: 1.5rem;
+    }
+
+    .funcionalidades-section h2,
+    .testimonios h2 {
+        font-size: 1.8rem;
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
     }
 }
