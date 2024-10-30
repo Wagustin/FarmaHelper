@@ -522,6 +522,7 @@ footer {
     transform: translateY(-2px);
 }
 
+/*Animaciones y Media Queries*/
 /* Estilos para carga y errores */
 .loading, .error {
     text-align: center;
@@ -545,6 +546,27 @@ footer {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s ease;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
 /* Media Queries */
@@ -655,26 +677,5 @@ footer {
 
     .footer-section h3 {
         font-size: 1.1rem;
-    }
-}
-
-/* Animaciones adicionales */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
     }
 }

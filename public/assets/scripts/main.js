@@ -18,12 +18,12 @@ searchInput.addEventListener('input', function() {
     }
 });
 
-//Sistema de testimonios
+// Sistema de testimonios
 function initializeTestimonials() {
     const testimonios = document.querySelectorAll('.testimonio');
     let testimonioActual = 0;
 
-    //Oculta todos los testimonios excepto el primero
+    // Oculta todos los testimonios excepto el primero
     testimonios.forEach((testimonio, index) => {
         testimonio.style.opacity = index === 0 ? '1' : '0';
         testimonio.style.position = 'absolute';
@@ -31,13 +31,13 @@ function initializeTestimonials() {
     });
 
     function rotarTestimonios() {
-        //Oculta el testimonio actual
+        // Oculta el testimonio actual
         testimonios[testimonioActual].style.opacity = '0';
         
-        //Actualiza el índice al siguiente testimonio
+        // Actualiza el índice al siguiente testimonio
         testimonioActual = (testimonioActual + 1) % testimonios.length;
         
-        //Muestra el nuevo testimonio
+        // Muestra el nuevo testimonio
         testimonios[testimonioActual].style.opacity = '1';
     }
 
@@ -45,7 +45,7 @@ function initializeTestimonials() {
     setInterval(rotarTestimonios, 5000);
 }
 
-//Animaciones de scroll
+// Animaciones de scroll
 const observador = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -69,21 +69,21 @@ function initializeFuncionalidades() {
     });
 }
 
-//Navegación SPA
+// Navegación SPA
 function handleNavigation(event) {
     event.preventDefault();
     const path = event.currentTarget.getAttribute('href');
     
-    //Añade animación de salida
+    // Añade animación de salida
     document.querySelector('main').classList.add('page-transition');
     
-    //Actualiza la URL sin recargar la página
+    // Actualiza la URL sin recargar la página
     history.pushState({}, '', path);
     
-    //Carga el nuevo contenido
+    // Carga el nuevo contenido
     loadContent(path);
     
-    //Actualiza el menú
+    // Actualiza el menú
     updateActiveMenu(path);
 }
 
