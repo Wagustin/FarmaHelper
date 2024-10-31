@@ -18,7 +18,7 @@ searchInput.addEventListener('input', function() {
     }
 });
 
-// Sistema de testimonios
+//Sistema de testimonios - Sección INICIO
 function initializeTestimonials() {
     const testimonios = document.querySelectorAll('.testimonio');
     let testimonioActual = 0;
@@ -45,7 +45,7 @@ function initializeTestimonials() {
     setInterval(rotarTestimonios, 5000);
 }
 
-// Animaciones de scroll
+// Animaciones de scroll                                 N O   M O D I F I C A R
 const observador = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -56,7 +56,7 @@ const observador = new IntersectionObserver((entries) => {
     threshold: 0.3
 });
 
-// Efectos hover en las funcionalidades
+// Efectos hover en las funcionalidades                  N O   M O D I F I C A R
 function initializeFuncionalidades() {
     document.querySelectorAll('.funcionalidad').forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -69,7 +69,8 @@ function initializeFuncionalidades() {
     });
 }
 
-// Navegación SPA
+//Navegación SPA - Para que no se se creen nuevas páginas al ir a una sección u otra
+//                                                      N O   M O D I F I C A R
 function handleNavigation(event) {
     event.preventDefault();
     const path = event.currentTarget.getAttribute('href');
@@ -87,6 +88,7 @@ function handleNavigation(event) {
     updateActiveMenu(path);
 }
 
+//                                                      N O   M O D I F I C A R
 async function loadContent(path) {
     try {
         const mainContent = document.querySelector('main');
@@ -118,6 +120,7 @@ async function loadContent(path) {
     }
 }
 
+//                                                      N O   M O D I F I C A R
 function updateActiveMenu(path) {
     document.querySelectorAll('nav a').forEach(link => {
         link.classList.remove('active');
@@ -129,7 +132,7 @@ function updateActiveMenu(path) {
     }
 }
 
-// Inicialización de características de la página
+// Inicialización de características de la página       N O   M O D I F I C A R
 function initializePageFeatures() {
     // Inicializa observadores para animaciones de scroll
     document.querySelectorAll('.funcionalidades-section, .valores-banner, .testimonios')
@@ -142,18 +145,18 @@ function initializePageFeatures() {
     initializeTestimonials();
 }
 
-// Manejadores de eventos para la navegación
+// Manejadores de eventos para la navegación            N O   M O D I F I C A R
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', handleNavigation);
 });
 
-// Manejo del botón atrás/adelante del navegador
+// Manejo del botón atrás/adelante del navegador       N O   M O D I F I C A R
 window.addEventListener('popstate', () => {
     loadContent(window.location.pathname);
     updateActiveMenu(window.location.pathname);
 });
 
-// PARA CONÓCENOS
+// PARA CONÓCENOS                                      N O   M O D I F I C A R
 function initializeConocenosAnimations() {
     const observador = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -170,7 +173,7 @@ function initializeConocenosAnimations() {
     });
 }
 
-// Inicialización cuando se carga la página
+// Inicialización cuando se carga la página            N O   M O D I F I C A R
 document.addEventListener('DOMContentLoaded', function() {
     
     // Carga inicial del contenido

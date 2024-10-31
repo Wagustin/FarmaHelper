@@ -1,7 +1,7 @@
 /* Importar Montserrat de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-/* Reset básico y estilos generales */
+/* Reset básico y estilos generales    N O   M O D I F I C A R*/
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     background-color: #f4d4d4;
 }
 
-/* Header y navegación */
+/* Header y navegación    N O   M O D I F I C A R*/
 header {
     background-color: white;
     padding: 10px 50px;
@@ -546,14 +546,13 @@ footer {
     background: rgba(255, 0, 0, 0.1);
 }
 
-/* Transiciones de página */
+/* Transiciones de página     N O   M O D I F I C A R*/
 .page-transition {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s ease;
 }
 
-/* Animaciones */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -736,7 +735,8 @@ footer {
     }
 }
 
-/* Media Queries */
+
+/* Media Queries - En esta parte no agregar nada a menos que lo requiera el desarrollo del feature*/
 @media (max-width: 1200px) {
     .hero {
         flex-direction: column;
