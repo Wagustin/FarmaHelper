@@ -18,7 +18,7 @@ searchInput.addEventListener('input', function() {
     }
 });
 
-//Sistema de testimonios - Sección INICIO
+//Sistema de testimonios - Sección INICIO                N O   M O D I F I C A R
 function initializeTestimonials() {
     const testimonios = document.querySelectorAll('.testimonio');
     let testimonioActual = 0;
