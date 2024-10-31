@@ -46,6 +46,11 @@ header.scrolled {
     transition: all 0.3s ease;
 }
 
+.home-logo img:hover {
+    transform: scale(1.05); /* Ligero zoom al pasar el mouse */
+    cursor: pointer;
+}
+
 header.scrolled .home-logo img {
     width: 100px;
     height: 90px;
@@ -569,6 +574,168 @@ footer {
     }
 }
 
+/* Estilos para la página Conócenos */
+
+/* Breadcrumb */
+.breadcrumb {
+    padding: 20px 50px;
+    background-color: #f4d4d4;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.breadcrumb a {
+    color: #640505;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #b21919;
+}
+
+.breadcrumb span {
+    color: #666;
+}
+
+/* Banner Principal de Conócenos */
+.conocenos-banner {
+    position: relative;
+    width: 100%;
+    min-height: 318px;
+    background-color: #f4d4d4;
+    display: flex;
+    align-items: center;
+    padding: 40px 50px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    z-index: 1;
+}
+
+.conocenos-banner h1 {
+    color: #640505;
+    font-size: 5rem;
+    font-weight: 700;
+    z-index: 2;
+    margin-right: 40px;
+    flex: 1;
+    padding-left: 120px; /* Añade padding a la izquierda */
+}
+
+.banner-image {
+    width: 567px;
+    height: 318px;
+    object-fit: cover;
+    border-radius: 8px; /* Añadido bordes redondos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadida sombra */
+    transition: all 0.3s ease; /* Añadida transición suave */
+}
+
+.banner-image:hover {
+    transform: scale(1.02); /* Añadido efecto zoom */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
+}
+
+/* Contenido principal */
+.conocenos-section {
+    position: relative; /* Añadir posicionamiento */
+    z-index: 1; /* Asegurar que esté visible */
+    padding: 80px 50px;
+    background-color: white;
+    margin-bottom: 40px; /* Espacio entre secciones */
+}
+
+.conocenos-section.bg-light {
+    background-color: #f4d4d4;
+}
+
+.conocenos-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Para cuando la imagen va a la izquierda y el texto a la derecha */
+.conocenos-content {
+    flex-direction: row;
+}
+
+.conocenos-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.conocenos-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.content-image {
+    flex: 1;
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Añade la transición suave */
+
+}
+
+.content-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.content-text {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Sección con fondo claro */
+.conocenos-section:nth-child(odd) {
+    background-color: white;
+}
+
+/* Sección con fondo oscuro */
+.conocenos-section:nth-child(even) {
+    background-color: #f4d4d4;
+}
+
+/* Para alternar el orden */
+.conocenos-section:nth-child(even) .conocenos-content {
+    flex-direction: row-reverse;
+}
+
+.content-text h2 {
+    color: #640505;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.content-text p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Media Queries */
 @media (max-width: 1200px) {
     .hero {
@@ -677,5 +844,61 @@ footer {
 
     .footer-section h3 {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .conocenos-content {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .conocenos-banner {
+        height: auto;
+        padding: 40px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .conocenos-banner h1 {
+        font-size: 2.5rem;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .banner-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .conocenos-content,
+    .conocenos-content.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .content-text {
+        padding: 0;
+    }
+
+    .content-text h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .conocenos-banner h1 {
+        font-size: 2rem;
+    }
+
+    .content-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .content-text p {
+        font-size: 1rem;
     }
 }

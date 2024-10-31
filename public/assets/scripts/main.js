@@ -153,13 +153,33 @@ window.addEventListener('popstate', () => {
     updateActiveMenu(window.location.pathname);
 });
 
+// PARA CONÓCENOS
+function initializeConocenosAnimations() {
+    const observador = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    document.querySelectorAll('.conocenos-content').forEach(section => {
+        observador.observe(section);
+    });
+}
+
 // Inicialización cuando se carga la página
 document.addEventListener('DOMContentLoaded', function() {
+    
     // Carga inicial del contenido
     loadContent(window.location.pathname);
     
     // Inicializa las características de la página
     initializePageFeatures();
+
+    initializeConocenosAnimations();
 });
 
 // Scroll suave para enlaces internos
@@ -190,3 +210,4 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scrolled');
     }
 });
+
