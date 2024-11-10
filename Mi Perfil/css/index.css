@@ -1,0 +1,226 @@
+/* Variables de color para facilitar la personalización */
+:root {
+    --main-bg-color: #f4d3d3;
+    --secondary-bg-color: #f7f7f7;
+    --primary-text-color: #333;
+    --secondary-text-color: #000;
+    --highlight-color: #ff6347;
+    --premium-bg-color: #000;
+    --premium-text-color: #fff;
+    --free-version-bg-color: #e0e0e0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: var(--primary-text-color);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--main-bg-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 0;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+}
+
+.header-logo img {
+    width: 250px;
+    height: auto;
+}
+
+.header-title {
+    font-size: 2rem;
+    text-align: right;
+    flex: 1;
+    color: var(--secondary-text-color);
+    font-weight: bold;
+}
+
+.header-nav {
+    width: 100%;
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.header-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.header-nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-text-color);
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.header-nav ul li a:hover {
+    color: var(--highlight-color);
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+.profile-header {
+    background-color: var(--main-bg-color);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.profile-data, .billing-info {
+    background-color: var(--secondary-bg-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+    .profile-info {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .profile-data, .billing-info {
+        width: 45%;
+    }
+}
+
+.profile-data h2, .billing-info h2, .subscription h3 {
+    margin-bottom: 10px;
+}
+
+.subscription-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.premium {
+    background-color: var(--premium-bg-color);
+    color: var(--premium-text-color);
+    padding: 25px;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.free-version {
+    background-color: var(--free-version-bg-color);
+    color: var(--primary-text-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+button {
+    background-color: var(--main-bg-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: var(--primary-text-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--highlight-color);
+}
+
+footer {
+    background-color: var(--main-bg-color);
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (min-width: 769px) {
+    footer .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+footer .footer-content nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+footer .footer-content .social-links a {
+    margin-right: 10px;
+}
+
+footer .footer-content .social-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+footer .footer-content .social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Añadir un poquito más de estilo al pie de página */
+footer .contact-info, footer nav, footer .social-links {
+    flex: 1;
+    text-align: center;
+}
+
+footer .contact-info p {
+    margin: 5px 0;
+}
+
+footer p {
+    margin: 10px 0;
+}
