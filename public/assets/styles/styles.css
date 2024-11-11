@@ -234,671 +234,225 @@ nav ul li a.active::after {
     height: 300px;
 }
 
-/* Sección Valores Banner */
-.valores-banner {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
-    margin: 0;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
+/* Estilos anteriores del CSS de FarmaHelper */
+
+/* Variables de color para facilitar la personalización */
+:root {
+    --main-bg-color: #f4d3d3;
+    --secondary-bg-color: #f7f7f7;
+    --primary-text-color: #333;
+    --secondary-text-color: #000;
+    --highlight-color: #ff6347;
+    --premium-bg-color: #000;
+    --premium-text-color: #fff;
+    --free-version-bg-color: #e0e0e0;
 }
 
-.valores-banner.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.valores-imagen {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    transition: transform 0.8s ease;
-}
-
-.valores-banner:hover .valores-imagen {
-    transform: scale(1.05);
-}
-
-.valores-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
+body {
+    background-color: #fff;
+    color: var(--primary-text-color);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+header {
+    background-color: var(--main-bg-color);
+    padding: 20px;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 10px;
 }
 
-.valores-banner h2 {
-    color: #333;
-    font-size: 3.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
-}
-
-.conocenos-btn {
-    background-color: #ff0000;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    z-index: 3;
-}
-
-.conocenos-btn:hover {
-    background-color: #b21919;
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 5px 15px rgba(178, 25, 25, 0.3);
-}
-
-.conocenos-btn::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s ease, height 0.3s ease;
-}
-
-.conocenos-btn:hover::after {
-    width: 300px;
-    height: 300px;
-}
-
-/* Sección Funcionalidades */
-.funcionalidades-section {
-    padding: 60px 50px;
-    text-align: center;
-    background-color: white;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-.funcionalidades-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.funcionalidades-section h2 {
-    color: #640505;
-    margin-bottom: 40px;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.funcionalidades {
+.header-top {
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.funcionalidad {
-    flex: 1;
-    padding: 30px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    transform: translateY(0);
-}
-
-.funcionalidad:hover,
-.funcionalidad.hover {
-    transform: translateY(-10px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
-.funcionalidad h3 {
-    color: #b21919;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.funcionalidad p {
-    color: #640505;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-/* Sección Testimonios */
-.testimonios {
-    background-color: #d9d9d9;
-    padding: 60px 0;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-.testimonios.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.testimonios h2 {
-    color: #640505;
-    margin-bottom: 40px;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.contenedor-testimonios {
-    position: relative;
-    height: 200px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 50px;
-}
-
-.testimonio {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: absolute;
-    width: calc(100% - 100px);
-    left: 50px;
-    top: 0;
-    opacity: 0;
-    transform: translateX(50px);
-    transition: all 0.5s ease;
-}
-
-.testimonio.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.stars {
-    color: #ff0000;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-.testimonio p {
-    color: #640505;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-.testimonio h4 {
-    color: #b21919;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 40px 50px;
-    margin-top: auto;
-}
-
-.footer-content {
-    display: flex;
+    align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 40px;
-}
-
-.footer-section {
-    flex: 1;
-}
-
-.footer-section h3 {
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.footer-section p {
-    color: #f4d4d4;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-    color: #f4d4d4;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: white;
-}
-
-.social {
-    display: flex;
+    width: 100%;
     gap: 15px;
 }
 
-.social img {
-    width: 32px;
-    height: 32px;
-    transition: all 0.3s ease;
-}
-
-.social img:hover {
-    opacity: 0.8;
-    transform: translateY(-2px);
-}
-
-/*Animaciones y Media Queries*/
-/* Estilos para carga y errores */
-.loading, .error {
-    text-align: center;
-    padding: 2rem;
-    margin: 2rem;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.9);
-}
-
-.loading {
-    color: #640505;
-}
-
-.error {
-    color: #ff0000;
-    background: rgba(255, 0, 0, 0.1);
-}
-
-/* Transiciones de página     N O   M O D I F I C A R*/
-.page-transition {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-/* Estilos para la página Conócenos */
-
-/* Breadcrumb */
-.breadcrumb {
-    padding: 20px 50px;
-    background-color: #f4d4d4;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.breadcrumb a {
-    color: #640505;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.breadcrumb a:hover {
-    color: #b21919;
-}
-
-.breadcrumb span {
-    color: #666;
-}
-
-/* Banner Principal de Conócenos */
-.conocenos-banner {
-    position: relative;
-    width: 100%;
-    min-height: 318px;
-    background-color: #f4d4d4;
-    display: flex;
-    align-items: center;
-    padding: 40px 50px;
-    overflow: hidden;
-    margin-bottom: 40px;
-    z-index: 1;
-}
-
-.conocenos-banner h1 {
-    color: #640505;
-    font-size: 5rem;
-    font-weight: 700;
-    z-index: 2;
-    margin-right: 40px;
-    flex: 1;
-    padding-left: 120px; /* Añade padding a la izquierda */
-}
-
-.banner-image {
-    width: 567px;
-    height: 318px;
-    object-fit: cover;
-    border-radius: 8px; /* Añadido bordes redondos */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadida sombra */
-    transition: all 0.3s ease; /* Añadida transición suave */
-}
-
-.banner-image:hover {
-    transform: scale(1.02); /* Añadido efecto zoom */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
-}
-
-/* Contenido principal */
-.conocenos-section {
-    position: relative; /* Añadir posicionamiento */
-    z-index: 1; /* Asegurar que esté visible */
-    padding: 80px 50px;
-    background-color: white;
-    margin-bottom: 40px; /* Espacio entre secciones */
-}
-
-.conocenos-section.bg-light {
-    background-color: #f4d4d4;
-}
-
-.conocenos-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-/* Para cuando la imagen va a la izquierda y el texto a la derecha */
-.conocenos-content {
-    flex-direction: row;
-}
-
-.conocenos-content.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.conocenos-content.reverse {
-    flex-direction: row-reverse;
-}
-
-.content-image {
-    flex: 1;
-}
-
-.content-image img {
-    width: 100%;
+.header-logo img {
+    width: 250px;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease; /* Añade la transición suave */
-
 }
 
-.content-image img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.content-text {
+.header-title {
+    font-size: 2rem;
+    text-align: right;
     flex: 1;
+    color: var(--secondary-text-color);
+    font-weight: bold;
+}
+
+.header-nav {
+    width: 100%;
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.header-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.header-nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-text-color);
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.header-nav ul li a:hover {
+    color: var(--highlight-color);
+}
+
+main {
     padding: 20px;
+    flex: 1;
 }
 
-/* Sección con fondo claro */
-.conocenos-section:nth-child(odd) {
-    background-color: white;
-}
-
-/* Sección con fondo oscuro */
-.conocenos-section:nth-child(even) {
-    background-color: #f4d4d4;
-}
-
-/* Para alternar el orden */
-.conocenos-section:nth-child(even) .conocenos-content {
-    flex-direction: row-reverse;
-}
-
-.content-text h2 {
-    color: #640505;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-}
-
-.content-text p {
-    color: #333;
-    font-size: 1.1rem;
-    line-height: 1.8;
+.profile-header {
+    background-color: var(--main-bg-color);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
     margin-bottom: 20px;
 }
 
-/* Animaciones */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 25px;
 }
 
-
-/* Media Queries - En esta parte no agregar nada a menos que lo requiera el desarrollo del feature*/
-@media (max-width: 1200px) {
-    .hero {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .logo-main, .hero-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .search-bar {
-        max-width: 100%;
-    }
-
-    .search-container input {
-        min-width: auto;
-    }
-
-    .valores-banner {
-        height: auto;
-        min-height: 300px;
-    }
-
-    .valores-banner h2 {
-        font-size: 2.5rem;
-    }
-
-    .funcionalidades {
-        flex-direction: column;
-        max-width: 600px;
-    }
+.profile-data, .billing-info {
+    background-color: var(--secondary-bg-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    header {
-        padding: 10px 20px;
-    }
-
-    .header-left {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul {
-        gap: 20px;
-        justify-content: center;
+@media (min-width: 769px) {
+    .profile-info {
+        flex-direction: row;
+        justify-content: space-between;
         flex-wrap: wrap;
     }
-
-    .hero {
-        padding: 20px;
-    }
-
-    .valores-banner h2 {
-        font-size: 2rem;
-        padding: 0 20px;
-    }
-
-    .contenedor-testimonios {
-        padding: 0 20px;
-    }
-
-    .testimonio {
-        width: calc(100% - 40px);
-        left: 20px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer-section {
-        text-align: center;
-    }
-
-    .social {
-        justify-content: center;
+    .profile-data, .billing-info {
+        width: 45%;
     }
 }
 
-@media (max-width: 480px) {
-    .home-logo img {
-        width: 100px;
-        height: 90px;
-    }
+.profile-data h2, .billing-info h2, .subscription h3 {
+    margin-bottom: 10px;
+}
 
-    .brand-name {
-        font-size: 1.2rem;
-    }
+.subscription-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 25px;
+}
 
-    .valores-banner h2 {
-        font-size: 1.5rem;
-    }
+.premium {
+    background-color: var(--premium-bg-color);
+    color: var(--premium-text-color);
+    padding: 25px;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
 
-    .search-bar h1 {
-        font-size: 1.5rem;
-    }
+.free-version {
+    background-color: var(--free-version-bg-color);
+    color: var(--primary-text-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
 
-    .funcionalidades-section h2,
-    .testimonios h2 {
-        font-size: 1.8rem;
-    }
+button {
+    background-color: var(--main-bg-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: var(--primary-text-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-    .footer-section h3 {
-        font-size: 1.1rem;
+button:hover {
+    background-color: var(--highlight-color);
+}
+
+footer {
+    background-color: var(--main-bg-color);
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (min-width: 769px) {
+    footer .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 
-@media (max-width: 1200px) {
-    .conocenos-content {
-        padding: 0 20px;
-    }
+footer .footer-content nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
 }
 
-@media (max-width: 768px) {
-    .conocenos-banner {
-        height: auto;
-        padding: 40px 20px;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .conocenos-banner h1 {
-        font-size: 2.5rem;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .banner-image {
-        position: relative;
-        width: 100%;
-        height: auto;
-        margin-top: 20px;
-    }
-
-    .conocenos-content,
-    .conocenos-content.reverse {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .content-text {
-        padding: 0;
-    }
-
-    .content-text h2 {
-        font-size: 2rem;
-    }
+footer .footer-content .social-links a {
+    margin-right: 10px;
 }
 
-@media (max-width: 480px) {
-    .conocenos-banner h1 {
-        font-size: 2rem;
-    }
+footer .footer-content .social-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
 
-    .content-text h2 {
-        font-size: 1.8rem;
-    }
+footer .footer-content .social-links img:hover {
+    transform: scale(1.1);
+}
 
-    .content-text p {
-        font-size: 1rem;
-    }
+/* Añadir un poquito más de estilo al pie de página */
+footer .contact-info, footer nav, footer .social-links {
+    flex: 1;
+    text-align: center;
+}
+
+footer .contact-info p {
+    margin: 5px 0;
+}
+
+footer p {
+    margin: 10px 0;
 }
